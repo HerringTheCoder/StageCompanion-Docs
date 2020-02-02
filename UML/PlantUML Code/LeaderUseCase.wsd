@@ -1,0 +1,24 @@
+@startuml Use-Case Leader
+
+left to right direction
+skinparam packageStyle rectangle
+skinparam Monochrome false
+scale 1
+actor Leader
+
+rectangle {
+    rectangle Band{
+        Leader -- (Modifies band's profile)
+        Leader -- (Invites new members)
+        Leader -- (Assigns band roles)
+        Leader -- (Removes members)
+        Leader -- (Dissolves a band)
+    }
+    rectangle Files{
+        Leader -- (Uploads to specific role)
+        Leader -- (Deletes a specific file)
+        Leader -- (Assigns files to members)
+        Leader -- (Browses band file structure)
+    }
+}
+@enduml

@@ -1,0 +1,24 @@
+@startuml Use-Case Member
+
+left to right direction
+skinparam packageStyle rectangle
+skinparam Monochrome false
+scale 1
+actor Member
+
+rectangle {
+    rectangle Band{
+        Member -- (Displays band members)
+        Member -- (Looks up band info)
+        Member -- (Leaves band)
+    }
+    rectangle Folder{
+        Member -- (Displays content)
+    }
+    rectangle Files{
+        Member -- (Browses)
+        Member -- (Previews)
+        Member -- (Downloads to device)        
+    }
+}
+@enduml

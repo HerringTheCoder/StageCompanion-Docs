@@ -1,0 +1,39 @@
+@startuml Files Sequence 
+actor User
+actor Member
+actor Leader
+scale 2
+skinparam Monochrome false
+collections Interface
+
+entity Band
+entity File
+entity Folder
+autonumber
+Leader -> Band : Creating band
+autonumber stop
+Band --> Leader : Status response
+autonumber 2
+Leader -> Band : Requesting new invitation
+Band -> User : Sending invitation code
+User -> Band : Accepting invitation
+Leader -> File : Uploading file
+autonumber stop
+File --> File : Validating file
+autonumber stop
+File --> Leader : Status response
+autonumber stop
+File --> Folder : Assigning to folder
+autonumber 6
+Member -> Folder : Opening designated folder
+autonumber stop
+Folder --> Folder : Attempting to load list of files
+autonumber 7
+Folder -> Member : Returning list of files (if any)
+Member -> File : Opening file
+File -> Member : Displaying file preview
+File --> Member : Saving file to device
+
+autonumber stop
+@enduml
+

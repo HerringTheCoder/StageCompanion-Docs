@@ -1,0 +1,20 @@
+@startuml Use-Case User
+
+left to right direction
+skinparam packageStyle rectangle
+skinparam Monochrome false
+scale 1
+actor User
+
+rectangle {
+    rectangle Bands{
+        User -- (Creates)
+        User -- (Discards)
+        User -- (Joins)
+    }
+    rectangle Profile{
+        User -- (Shows)
+        User -- (Modifies)
+    }
+}
+@enduml
